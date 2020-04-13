@@ -1,0 +1,246 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Boolean() Number() 的转换规则 | Gridea</title>
+<link rel="shortcut icon" href="https://wangxiansen15.blog.github.io/favicon.ico?v=1586785383375">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://wangxiansen15.blog.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Boolean() Number() 的转换规则 | Gridea - Atom Feed" href="https://wangxiansen15.blog.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Boolean()
+
+
+
+数据类型
+转化为true的值
+转化为false的值
+
+
+
+
+Boolean
+true
+false
+
+
+Number
+任何非零的数字，包括Infinity 与-Infinity
+0,-0,NaN
+
+
+undefine..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://wangxiansen15.blog.github.io">
+  <img class="avatar" src="https://wangxiansen15.blog.github.io/images/avatar.png?v=1586785383375" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Boolean() Number() 的转换规则
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-04-13
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="boolean">Boolean()</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数据类型</th>
+<th style="text-align:center">转化为true的值</th>
+<th style="text-align:center">转化为false的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Boolean</td>
+<td style="text-align:center">true</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:center">Number</td>
+<td style="text-align:center">任何非零的数字，包括Infinity 与-Infinity</td>
+<td style="text-align:center">0,-0,NaN</td>
+</tr>
+<tr>
+<td style="text-align:center">undefined</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center">undefined</td>
+</tr>
+<tr>
+<td style="text-align:center">Object</td>
+<td style="text-align:center">任何对象</td>
+<td style="text-align:center">null</td>
+</tr>
+<tr>
+<td style="text-align:center">String</td>
+<td style="text-align:center">任何非空字符串</td>
+<td style="text-align:center">&quot;&quot;(空字符串)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="number">Number()</h2>
+<ul>
+<li>如果是<code>null</code>,转化为<code>0</code></li>
+<li>如果是<code>undefined</code> ,转化为NaN</li>
+<li>如果是bool值,<code>true</code>转化为<code>1</code>,<code>false</code>转化为<code>0</code></li>
+<li>如果是字符串
+<ul>
+<li>如果字符串中只包含数字(包括前面带正号和负号的情况)，将其转化为十进制数值（前导0会被忽略）</li>
+<li>如果字符串中包含有效的浮点格式，会将其转化为对应的浮点数（前导0会被忽略）</li>
+<li>如果字符串中包含有效的十六进制格式，会将其转化为同样大小的十进制整数值</li>
+<li>如果是空字符串会转化为0</li>
+<li>如果上述字符串中包含出上述格式外的所有字符，都会被转化为NaN</li>
+</ul>
+</li>
+<li>如果是对象，首先会调用对象的<code>valueOf()</code>方法，然后对返回的值进行上述规则的转换，如果得到的值为NaN，则会调用对象的toString()方法，然后按照前面的规则转换得到的字符串</li>
+</ul>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#boolean">Boolean()</a></li>
+<li><a href="#number">Number()</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://wangxiansen15.blog.github.io/post/hello-gridea/">
+              <h3 class="post-title">
+                Hello Gridea
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://wangxiansen15.blog.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
