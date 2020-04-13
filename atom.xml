@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangxiansen15.github.io</id>
-    <title>Gridea</title>
-    <updated>2020-04-13T14:56:20.015Z</updated>
+    <title>王先森想要更充实一点</title>
+    <updated>2020-04-13T14:59:48.719Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangxiansen15.github.io"/>
     <link rel="self" href="https://wangxiansen15.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>岁月悠悠,，衰微只及肌肤；
+热忱抛弃，颓废必至灵魂。</subtitle>
     <logo>https://wangxiansen15.github.io/images/avatar.png</logo>
     <icon>https://wangxiansen15.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <rights>All rights reserved 2020, 王先森想要更充实一点</rights>
     <entry>
         <title type="html"><![CDATA[Boolean() Number() 的转换规则]]></title>
         <id>https://wangxiansen15.github.io/post/boolean-number-de-zhuan-huan-gui-ze/</id>
