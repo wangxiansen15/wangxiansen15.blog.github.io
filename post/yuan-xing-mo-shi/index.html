@@ -101,7 +101,7 @@ Person.prototype.isPrototypeOf(person1);//true
 <p>每当代码读取某个对象的属性时，都会执行一次搜索，目标是具有给定名字的属性。搜索首先从对象实例本身开始。如果在实例中找到了具有给定名字的属性，则返回该属性的值；如果没有找到，则继续搜索指针指向的原型对象，在原型对象中查找具有给定名字的属性。如果在原型对象中找到了这个属性，则返回该属性的值。</p>
 <p><strong>注意</strong></p>
 <p>虽然可以通过对象实例访问保存在原型中的值，但却不能通过对象实例重写原型中的值。如果我们在实例中添加了一个属性，而该属性与实例原型中的一个属性同名，那我们就在实例中创建该属性，该属性将会屏蔽原型中的那个属性。使用<code>delete</code>操作符则可以完全删除同名的实例对象，从而让我们能够重新访问原型中的属性。</p>
-<p><strong><code>hasOwnProperty()</code></strong></p>
+<p><strong>hasOwnProperty()</strong></p>
 <p>使用<code>hasOwnProperty()</code>方法可以检测一个属性是否存在于实例中，还是存在于原型中。这个方法只在给定属性存在于对象实例中时，才会返回true。</p>
 <pre><code class="language-js">person1.hasOwnProperty(&quot;name&quot;);//只在给定属性在实例中才返回true
 </code></pre>
@@ -115,9 +115,9 @@ Person.prototype.isPrototypeOf(person1);//true
 <p>在单独使用时，in操作符会在通过对象能够访问给定属性时返回true，无论该属性存在于实例中还是原型中。</p>
 <h3 id="在for-in循环中使用in操作符">在for-in循环中使用in操作符</h3>
 <p>在使用for-in循环时，返回的是所有能够通过对象访问的、可枚举的属性，其中既包括存在于实例中的对象也包括存在与原型中的属性。屏蔽了原型中不可枚举属性。</p>
-<h3 id="objectkeys"><code>Object.keys()</code></h3>
+<h3 id="objectkeys">Object.keys()</h3>
 <p>取得对象上所有可枚举的实例属性，这个方法接收一个对象为参数，返回一个包含所有可枚举属性的字符串数组。</p>
-<h3 id="objectgetownpropertynames"><code>Object.getOwnPropertyNames()</code></h3>
+<h3 id="objectgetownpropertynames">Object.getOwnPropertyNames()</h3>
 <p>得到所有实例对象无论是否可枚举</p>
 <pre><code class="language-js">var keys = Object.getOwnPropertyNames(Person.prototype);
 </code></pre>
@@ -211,8 +211,8 @@ Person.prototype = {
 <ul>
 <li><a href="#%E5%8D%95%E7%8B%AC%E4%BD%BF%E7%94%A8in%E6%93%8D%E4%BD%9C%E7%AC%A6">单独使用in操作符</a></li>
 <li><a href="#%E5%9C%A8for-in%E5%BE%AA%E7%8E%AF%E4%B8%AD%E4%BD%BF%E7%94%A8in%E6%93%8D%E4%BD%9C%E7%AC%A6">在for-in循环中使用in操作符</a></li>
-<li><a href="#objectkeys"><code>Object.keys()</code></a></li>
-<li><a href="#objectgetownpropertynames"><code>Object.getOwnPropertyNames()</code></a></li>
+<li><a href="#objectkeys">Object.keys()</a></li>
+<li><a href="#objectgetownpropertynames">Object.getOwnPropertyNames()</a></li>
 </ul>
 </li>
 <li><a href="#3%E6%9B%B4%E7%AE%80%E5%8D%95%E7%9A%84%E5%8E%9F%E5%9E%8B%E8%AF%AD%E6%B3%95">3.更简单的原型语法</a>
