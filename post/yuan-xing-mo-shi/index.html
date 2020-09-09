@@ -84,18 +84,12 @@ Person.prototype.sayName = function() {
 <p>创建了自定义的构造函数之后，其原型对象默认只会取得constructor属性；至于其他方法，则都是从Object继承而来的。当调用构造函数创建一个新实例后，该<strong>实例内部将包含一个指针（内部属性），指向构造函数的原型对象。</strong></p>
 <figure data-type="image" tabindex="1"><img src="https://wangxiansen15.github.io/post-images/1599654562332.png" alt="" loading="lazy"></figure>
 <p>两个方法</p>
-<ul>
-<li>
 <pre><code class="language-js">//确定对象与原型之间的关系
 Person.prototype.isPrototypeOf(person1);//true
 </code></pre>
-</li>
-<li>
-<pre><code class="language-js">//Object.getPrototypeOf();返回[[Prototype]]的值
-Object.getPrototypeOf(person1) == Person.prototype;//true
+<pre><code class="language-js"> //Object.getPrototypeOf();返回[[Prototype]]的值
+ Object.getPrototypeOf(person1) == Person.prototype;//true
 </code></pre>
-</li>
-</ul>
 <p><strong>搜索模式</strong></p>
 <p>每当代码读取某个对象的属性时，都会执行一次搜索，目标是具有给定名字的属性。搜索首先从对象实例本身开始。如果在实例中找到了具有给定名字的属性，则返回该属性的值；如果没有找到，则继续搜索指针指向的原型对象，在原型对象中查找具有给定名字的属性。如果在原型对象中找到了这个属性，则返回该属性的值。</p>
 <p><strong>注意</strong></p>
