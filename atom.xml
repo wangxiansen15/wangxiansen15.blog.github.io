@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangxiansen15.github.io</id>
     <title>王先森想要更充实一点</title>
-    <updated>2020-09-03T08:17:28.959Z</updated>
+    <updated>2020-09-09T12:21:30.130Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangxiansen15.github.io"/>
     <link rel="self" href="https://wangxiansen15.github.io/atom.xml"/>
@@ -11,6 +11,107 @@
     <logo>https://wangxiansen15.github.io/images/avatar.png</logo>
     <icon>https://wangxiansen15.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 王先森想要更充实一点</rights>
+    <entry>
+        <title type="html"><![CDATA[原型模式]]></title>
+        <id>https://wangxiansen15.github.io/post/yuan-xing-mo-shi/</id>
+        <link href="https://wangxiansen15.github.io/post/yuan-xing-mo-shi/">
+        </link>
+        <updated>2020-09-09T12:01:39.000Z</updated>
+        <content type="html"><![CDATA[<p>我们创建的<strong>每个函数</strong>都有一个<strong>prototype（原型）属性</strong>，这个属性是一个<strong>指针</strong>，指向<strong>一个对象</strong>，而这个对象的用途是<strong>包含可以由特定类型的所有实例共享的属性和方法</strong>。</p>
+<pre><code class="language-js">function Person (){
+
+}
+
+Person.prototype.name = &quot;wwj&quot;;
+Perosn.prototype.age = &quot;21&quot;;
+Person.prototype.sayName = function() {
+	alert(this.name);
+}
+</code></pre>
+<h2 id="1理解原型对象">1.理解原型对象</h2>
+<p>无论什么时候，只要创建了一个新函数，就会根据一组特定的规则为该函数创建一个prototype属性，这个属性指向函数的原型对象。<strong>在默认情况下，所有原型对象都会自动获得一个constructor（构造函数）属性</strong>，这个属性是<strong>指向prototype属性所在函数的指针</strong>。</p>
+<p>创建了自定义的构造函数之后，其原型对象默认只会取得constructor属性；至于其他方法，则都是从Object继承而来的。当调用构造函数创建一个新实例后，该<strong>实例内部将包含一个指针（内部属性），指向构造函数的原型对象。</strong></p>
+<figure data-type="image" tabindex="1"><img src="https://github.com/wangxiansen15/studyNote/blob/master/img/yuanxinmoshi.png" alt="image" loading="lazy"></figure>
+<p>两个方法</p>
+<ul>
+<li>
+<pre><code class="language-js">//确定对象与原型之间的关系
+Person.prototype.isPrototypeOf(person1);//true
+</code></pre>
+</li>
+<li>
+<pre><code class="language-js">//Object.getPrototypeOf();返回[[Prototype]]的值
+Object.getPrototypeOf(person1) == Person.prototype;//true
+</code></pre>
+</li>
+</ul>
+<p><strong>搜索模式</strong></p>
+<p>每当代码读取某个对象的属性时，都会执行一次搜索，目标是具有给定名字的属性。搜索首先从对象实例本身开始。如果在实例中找到了具有给定名字的属性，则返回该属性的值；如果没有找到，则继续搜索指针指向的原型对象，在原型对象中查找具有给定名字的属性。如果在原型对象中找到了这个属性，则返回该属性的值。</p>
+<p><strong>注意</strong></p>
+<p>虽然可以通过对象实例访问保存在原型中的值，但却不能通过对象实例重写原型中的值。如果我们在实例中添加了一个属性，而该属性与实例原型中的一个属性同名，那我们就在实例中创建该属性，该属性将会屏蔽原型中的那个属性。使用<code>delete</code>操作符则可以完全删除同名的实例对象，从而让我们能够重新访问原型中的属性。</p>
+<p><strong><code>hasOwnProperty()</code></strong></p>
+<p>使用<code>hasOwnProperty()</code>方法可以检测一个属性是否存在于实例中，还是存在于原型中。这个方法只在给定属性存在于对象实例中时，才会返回true。</p>
+<pre><code class="language-js">person1.hasOwnProperty(&quot;name&quot;);//只在给定属性在实例中才返回true
+</code></pre>
+<h2 id="2原型与in操作符">2.原型与in操作符</h2>
+<p><strong>使用in操作符的两种方式</strong></p>
+<ul>
+<li>单独使用</li>
+<li>在for-in循环中使用</li>
+</ul>
+<h3 id="单独使用in操作符">单独使用in操作符</h3>
+<p>在单独使用时，in操作符会在通过对象能够访问给定属性时返回true，无论该属性存在于实例中还是原型中。</p>
+<h3 id="在for-in循环中使用in操作符">在for-in循环中使用in操作符</h3>
+<p>在使用for-in循环时，返回的是所有能够通过对象访问的、可枚举的属性，其中既包括存在于实例中的对象也包括存在与原型中的属性。屏蔽了原型中不可枚举属性。</p>
+<h3 id="objectkeys"><code>Object.keys()</code></h3>
+<p>取得对象上所有可枚举的实例属性，这个方法接收一个对象为参数，返回一个包含所有可枚举属性的字符串数组。</p>
+<h3 id="objectgetownpropertynames"><code>Object.getOwnPropertyNames()</code></h3>
+<p>得到所有实例对象无论是否可枚举</p>
+<pre><code class="language-js">var keys = Object.getOwnPropertyNames(Person.prototype);
+</code></pre>
+<h2 id="3更简单的原型语法">3.更简单的原型语法</h2>
+<pre><code class="language-js">function Person() {
+
+}
+
+Person.prototype = {
+	name: 'wwj',
+	age: '21',
+	sayName: function() {
+		alert(this.name);
+	}
+};
+</code></pre>
+<h3 id="注意">注意</h3>
+<p>以上代码中，我们将<code>Person.prototype</code>设置为等于一个以对象字面量形式创建的新对象。最终效果相同，但有一个例外：constructor属性不再指向Person了。前面曾经介绍过，每创建一个函数，就会同时创建它的prototype对象，这个对象也会自动获得constructor属性。而我们在这里使用的语法，本质上完全重写了默认的prototype对象，因此construct属性就变成了新对象的constructor属性（指向Object构造函数），不再指向Person函数。此时，尽管<code>instanceof</code>操作符还能返回正确的结果，但通过constructor已经无法确定对象的类型了。</p>
+<p><strong>避免方法</strong></p>
+<pre><code class="language-js">function Person() {
+
+}
+
+Person.prototype = {
+	constructor: Person,
+	name: 'wwj',
+	age: '21',
+	sayName: function() {
+		alert(this.name);
+	}
+};
+</code></pre>
+<p>但是这样设置会导致constructor属性的特性[[Enumerable]]特性会被设置为true。默认情况下，原生的constructor属性是不可枚举的。</p>
+<h2 id="4原型的动态性">4.原型的动态性</h2>
+<p>对原型对象所做的任何修改都能够立即从实例上反映出来——即使是先创建了实例后修改原型也照样如此。因为实例与原型之间的联系只不过是一个指针，而非一个副本，因此在实例中没有找到对应属性就会通过指针去原型对象中去寻找属性。</p>
+<p>但是如果重写了整个原型对象，情况会发生变化。因为调用构造函数会为实例添加一个指向最初原型的指针，而把原型修改为另一个对象就等于切断了构造函数与最初原型的联系。</p>
+<h2 id="5原生对象的原型">5.原生对象的原型</h2>
+<p>原型模式的重要性不仅体现在创建自定义类型方面，就连所有原生的引用类型，都是采用这种模式创建的。所有原型引用类型（Object、Array、String，等等）都在其构造函数的原型上定义了方法。</p>
+<p>通过原生对象的原型，不仅可以取得所有默认方法的引用，而且也可以定义新方法。</p>
+<h2 id="6原型对象的问题">6.原型对象的问题</h2>
+<ul>
+<li>省略了为构造函数传递初始化参数这一环节，结果所有实例在默认情况下都将取得相同的属性值。</li>
+<li>原型中所有属性是被很多实例共享的，这种共享对于函数非常合适。对于那些包含基本值的属性也可以，因为对象实例上的同名属性会隐藏原型中的对应属性。</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[浏览器端发起HTTP请求流程]]></title>
         <id>https://wangxiansen15.github.io/post/liu-lan-qi-duan-fa-qi-http-qing-qiu-liu-cheng/</id>
