@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangxiansen15.github.io</id>
     <title>王先森想要更充实一点</title>
-    <updated>2020-09-09T12:26:04.242Z</updated>
+    <updated>2020-09-09T12:29:57.357Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangxiansen15.github.io"/>
     <link rel="self" href="https://wangxiansen15.github.io/atom.xml"/>
@@ -31,7 +31,7 @@ Person.prototype.sayName = function() {
 <h2 id="1理解原型对象">1.理解原型对象</h2>
 <p>无论什么时候，只要创建了一个新函数，就会根据一组特定的规则为该函数创建一个prototype属性，这个属性指向函数的原型对象。<strong>在默认情况下，所有原型对象都会自动获得一个constructor（构造函数）属性</strong>，这个属性是<strong>指向prototype属性所在函数的指针</strong>。</p>
 <p>创建了自定义的构造函数之后，其原型对象默认只会取得constructor属性；至于其他方法，则都是从Object继承而来的。当调用构造函数创建一个新实例后，该<strong>实例内部将包含一个指针（内部属性），指向构造函数的原型对象。</strong></p>
-<figure data-type="image" tabindex="1"><img src="https://github.com/wangxiansen15/studyNote/blob/master/img/yuanxinmoshi.png" alt="image" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://wangxiansen15.github.io/post-images/1599654562332.png" alt="" loading="lazy"></figure>
 <p>两个方法</p>
 <ul>
 <li>
