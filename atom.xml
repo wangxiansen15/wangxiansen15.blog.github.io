@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangxiansen15.github.io</id>
     <title>王先森想要更充实一点</title>
-    <updated>2020-11-27T14:06:55.129Z</updated>
+    <updated>2020-11-28T10:57:13.109Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangxiansen15.github.io"/>
     <link rel="self" href="https://wangxiansen15.github.io/atom.xml"/>
@@ -11,6 +11,22 @@
     <logo>https://wangxiansen15.github.io/images/avatar.png</logo>
     <icon>https://wangxiansen15.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 王先森想要更充实一点</rights>
+    <entry>
+        <title type="html"><![CDATA[var、let、const的区别]]></title>
+        <id>https://wangxiansen15.github.io/post/varletconst-de-qu-bie/</id>
+        <link href="https://wangxiansen15.github.io/post/varletconst-de-qu-bie/">
+        </link>
+        <updated>2020-11-28T10:54:31.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>按版本分，var属于ES5，let、const属于ES6</li>
+<li>var是函数作用域，let、const是块级作用域</li>
+<li>var声明的变量存在变量提升，let和const不存在变量提升</li>
+<li>var可以重复声明，但是let和const不可以</li>
+<li>let、const会产生暂时性死区。如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错</li>
+<li>const声明的变量不得改变值(不过对象的内容可以改变，因为const保存的是对象在堆中的引用地址)</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JavaScript中的垃圾回收机制]]></title>
         <id>https://wangxiansen15.github.io/post/javascript-zhong-de-la-ji-hui-shou-ji-zhi/</id>
