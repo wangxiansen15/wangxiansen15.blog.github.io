@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangxiansen15.github.io</id>
     <title>王先森想要更充实一点</title>
-    <updated>2020-11-28T11:18:40.345Z</updated>
+    <updated>2020-11-29T08:43:46.082Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangxiansen15.github.io"/>
     <link rel="self" href="https://wangxiansen15.github.io/atom.xml"/>
@@ -11,6 +11,62 @@
     <logo>https://wangxiansen15.github.io/images/avatar.png</logo>
     <icon>https://wangxiansen15.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 王先森想要更充实一点</rights>
+    <entry>
+        <title type="html"><![CDATA[this的指向]]></title>
+        <id>https://wangxiansen15.github.io/post/this-de-zhi-xiang/</id>
+        <link href="https://wangxiansen15.github.io/post/this-de-zhi-xiang/">
+        </link>
+        <updated>2020-11-29T08:42:22.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="默认绑定">默认绑定</h2>
+<pre><code class="language-js">function a(){
+  console.log(this);
+}
+a();//window
+</code></pre>
+<p>这是个普通的函数调用。在这种情况下，this在非严格模式下指向window或global对象。在严格模式下，this指向undefined。</p>
+<h2 id="隐式绑定">隐式绑定</h2>
+<pre><code class="language-js">var obj = {
+  name: 'wwj',
+  sayName: function () {
+    console.log(this);
+  }
+};
+
+obj.sayName();//{ name: 'wwj', sayName: [Function: sayName] }
+</code></pre>
+<p>当我们以一个obj对象来调用这个函数时，<code>sayName()</code>方法内部的this指向obj。</p>
+<pre><code class="language-js">let fun = obj.sayName;
+fun();//window
+</code></pre>
+<p>当我们将一个函数引用赋值给某个其他变量并使用这个新的函数去调用该函数时，我们this又是window。</p>
+<p>当我们调用fun()时，我们没有指定一个具体的上下文对象。这是一个没有所有者对象的纯函数调用。在这种情况下，sayName()内部的this值退回到<strong>默认绑定</strong>。</p>
+<pre><code class="language-js">//setTimeout 的虚拟实现
+function setTimeout(callback, delay){
+   //等待 'delay' 数个毫秒
+   callback();
+}
+ 
+setTimeout( obj.display, 1000 );
+</code></pre>
+<p>在调用setTimeout时，JavaScript在内部将obj.display赋给参数callback。</p>
+<p>这种赋值操作会导致display()函数丢失其上下文。当此函数最终在setTimeout函数里面被调用时，display()内部的this值会退回至<strong>默认绑定</strong>.</p>
+<h2 id="明确绑定">明确绑定</h2>
+<p>为了避免这种情况，我们可以使用<strong>明确绑定方法</strong>，将this的值通过bind()方法绑定到函数上。</p>
+<pre><code class="language-js">var obj = {
+  name: 'wwj',
+  sayName: function () {
+    console.log(this);
+  }
+};
+obj.sayName = obj.sayName.bind(obj);
+let fun = obj.sayName;
+fun();//{ name: 'wwj', sayName: [Function: sayName] }
+</code></pre>
+<p>即使我们将obj.sayName直接作为callback参数传递给函数，sayName()内部的this也会正确的指向obj。</p>
+<h2 id="箭头函数">箭头函数</h2>
+<p><strong>由于箭头函数不绑定this， 它会捕获其所在（即定义的位置）上下文的this值， 作为自己的this值。</strong></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[var、let、const的区别]]></title>
         <id>https://wangxiansen15.github.io/post/varletconst-de-qu-bie/</id>
