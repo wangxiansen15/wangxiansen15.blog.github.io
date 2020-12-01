@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangxiansen15.github.io</id>
     <title>王先森想要更充实一点</title>
-    <updated>2020-11-29T08:43:46.082Z</updated>
+    <updated>2020-12-01T08:05:57.572Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangxiansen15.github.io"/>
     <link rel="self" href="https://wangxiansen15.github.io/atom.xml"/>
@@ -11,6 +11,28 @@
     <logo>https://wangxiansen15.github.io/images/avatar.png</logo>
     <icon>https://wangxiansen15.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 王先森想要更充实一点</rights>
+    <entry>
+        <title type="html"><![CDATA[Cookie、LocalStorage、SessionStorage]]></title>
+        <id>https://wangxiansen15.github.io/post/cookielocalstoragesessionstorage/</id>
+        <link href="https://wangxiansen15.github.io/post/cookielocalstoragesessionstorage/">
+        </link>
+        <updated>2020-12-01T08:02:23.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="基本概念">基本概念</h2>
+<h3 id="cookie">Cookie</h3>
+<p>cookie是小甜饼的意思。顾名思义，cookie确实十分小，大小限制在4KB左右。它的主要用途有保存登录信息。</p>
+<h3 id="localstorage">localStorage</h3>
+<p>localStorage是HTML5标准中新加入的技术。并不是什么跨时代的新东西。在IE 6时代，就有一个叫userData的东西用于本地存储。</p>
+<h3 id="sessionstorage">sessionStorage</h3>
+<p>sessionStorage与localStorage的接口类似，但保存数据的生命周期与localStorage不同。它可以将一部分数据在当前会话中保存下来，刷新页面数据依然存在。但当页面关闭后，sessionStorage中的数据就会被清空。</p>
+<h2 id="三者的异同">三者的异同</h2>
+<figure data-type="image" tabindex="1"><img src="https://wangxiansen15.github.io/post-images/1606809784919.jpg" alt="" loading="lazy"></figure>
+<h2 id="应用场景">应用场景</h2>
+<p>因为每个HTTP请求都会带着Cookie的信息，所以Cookie要尽可能精简，比较常用的一个应用场景就是判断用户是否登录。针对登录过的用户，服务器端会在他登录时往Cookie中插入一段加密过的唯一辨识单一用户的辨识码，下次只要读取这个值就可以判断当前用户是否登录了。</p>
+<p>localStroage大多数存储比较大点的数据。</p>
+<h2 id="安全性考虑">安全性考虑</h2>
+<p>需要注意，不是什么数据都适合放在Cookie、localStorage和sessionStorage中的。需要时刻注意是否有代码存在XSS注入的风险。所以不要用它们存储系统中的敏感数据。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[this的指向]]></title>
         <id>https://wangxiansen15.github.io/post/this-de-zhi-xiang/</id>
