@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangxiansen15.github.io</id>
     <title>王先森想要更充实一点</title>
-    <updated>2020-12-01T08:06:29.766Z</updated>
+    <updated>2020-12-02T12:08:09.317Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangxiansen15.github.io"/>
     <link rel="self" href="https://wangxiansen15.github.io/atom.xml"/>
@@ -11,6 +11,41 @@
     <logo>https://wangxiansen15.github.io/images/avatar.png</logo>
     <icon>https://wangxiansen15.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 王先森想要更充实一点</rights>
+    <entry>
+        <title type="html"><![CDATA[Set]]></title>
+        <id>https://wangxiansen15.github.io/post/set/</id>
+        <link href="https://wangxiansen15.github.io/post/set/">
+        </link>
+        <updated>2020-12-02T12:05:04.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="set">Set</h1>
+<p>Set类似于数组，但是成员都是唯一的，没有重复的值。</p>
+<p>Set判断元素是否唯一类似于全等运算符(<code>===</code>)，主要的区别是向Set加入值时认为<code>NaN</code>等于自身，而全等运算法认为<code>NaN</code>不等于<code>NaN</code>。</p>
+<p>两个对象总是不相等的</p>
+<h2 id="set实例的属性和方法">Set实例的属性和方法</h2>
+<h3 id="实例属性">实例属性</h3>
+<ul>
+<li>Set.prototype.constructor：构造函数，默认就是<code>Set</code>函数。</li>
+<li>Set.prototype.size：返回Set实例的成员总数。</li>
+</ul>
+<h3 id="实例方法">实例方法</h3>
+<h4 id="操作方法">操作方法</h4>
+<ul>
+<li>Set.prototype.add(value)：添加某个值，返回Set结构本身。</li>
+<li>Set.prototype.delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。</li>
+<li>Set.prototype.has(value)：返回一个布尔值，表示该值是否为<code>Set</code>的成员。</li>
+<li>Set.prototype.clear()：清除所有成员，没有返回值。</li>
+</ul>
+<h4 id="遍历方法">遍历方法</h4>
+<ul>
+<li>Set.prototype.keys()：返回键名的遍历器</li>
+<li>Set.prototype.values()：返回键值的遍历器</li>
+<li>Set.prototype.entries()：返回键值对的遍历器</li>
+<li>Set.prototype.forEach()：使用回调函数遍历每个成员</li>
+</ul>
+<h2 id="参考">参考</h2>
+<p><a href="https://es6.ruanyifeng.com/#docs/set-map#Set">https://es6.ruanyifeng.com/#docs/set-map#Set</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Cookie、LocalStorage、SessionStorage]]></title>
         <id>https://wangxiansen15.github.io/post/cookielocalstoragesessionstorage/</id>
