@@ -61,6 +61,30 @@
     
     <div class="flex-1 order-2 md:order-1">
       <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wangxiansen15.github.io/post/pan-duan-yi-ge-bian-liang-shi-bu-shi-shu-zu/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+           判断一个变量是不是数组
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-03-01</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        方法一
+Array.isArray(value);
+
+//实现原理
+Array.prototype.isArray = function(value){
+	return Object.prototype.toString.call(valu...
+      </div>
+      <a href="https://wangxiansen15.github.io/post/pan-duan-yi-ge-bian-liang-shi-bu-shi-shu-zu/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
         <a href="https://wangxiansen15.github.io/post/set/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
           Set
         </a>
@@ -188,32 +212,6 @@ let、con...
     </div>
     
       <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://wangxiansen15.github.io/post-images/array.jpg" alt="Array">
-    
-  </div>
-
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://wangxiansen15.github.io/post/yuan-xing-mo-shi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          原型模式
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2020-09-09</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        我们创建的每个函数都有一个prototype（原型）属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。
-function Person (){
-
-}
-
-Person.prototype....
-      </div>
-      <a href="https://wangxiansen15.github.io/post/yuan-xing-mo-shi/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://wangxiansen15.github.io/post-images/yuan-xing-mo-shi.jpg" alt="原型模式">
     
   </div>
   
