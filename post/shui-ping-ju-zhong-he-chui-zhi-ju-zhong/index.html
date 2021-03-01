@@ -1,0 +1,621 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>水平居中和垂直居中 - 王先森想要更充实一点</title>
+<link rel="shortcut icon" href="https://wangxiansen15.github.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://wangxiansen15.github.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://wangxiansen15.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="水平居中和垂直居中 - 王先森想要更充实一点 - Atom Feed" href="https://wangxiansen15.github.io/atom.xml">
+
+    
+
+  <meta name="description" content="水平居中
+行内元素
+1.利用text-align属性
+如果父元素不是块级元素，先使用display将父元素变为块级元素。
+&amp;lt;style&amp;gt;
+    #father {
+        width: 500px;
+        h..." />
+  <meta property="og:title" content="水平居中和垂直居中 - 王先森想要更充实一点">
+  <meta property="og:description" content="水平居中
+行内元素
+1.利用text-align属性
+如果父元素不是块级元素，先使用display将父元素变为块级元素。
+&amp;lt;style&amp;gt;
+    #father {
+        width: 500px;
+        h..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://wangxiansen15.github.io/post/shui-ping-ju-zhong-he-chui-zhi-ju-zhong/" />
+  <meta property="og:image" content="https://wangxiansen15.github.io/images/avatar.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="水平居中和垂直居中 - 王先森想要更充实一点">
+  <meta name="twitter:description" content="水平居中
+行内元素
+1.利用text-align属性
+如果父元素不是块级元素，先使用display将父元素变为块级元素。
+&amp;lt;style&amp;gt;
+    #father {
+        width: 500px;
+        h...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://wangxiansen15.github.io/post/shui-ping-ju-zhong-he-chui-zhi-ju-zhong/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://wangxiansen15.github.io/media/css/prism-atom-dark.css">
+  
+
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://wangxiansen15.github.io" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      王先森想要更充实一点
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          水平居中和垂直居中
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2021-03-01 · 6 min read</div>
+          
+            <a href="https://wangxiansen15.github.io/tag/BqISoT94w/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              css
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h1 id="水平居中">水平居中</h1>
+<h2 id="行内元素">行内元素</h2>
+<h3 id="1利用text-align属性">1.利用text-align属性</h3>
+<p><strong>如果父元素不是块级元素，先使用display将父元素变为块级元素。</strong></p>
+<pre><code class="language-html">&lt;style&gt;
+    #father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+        text-align: center;
+    }
+    #son {
+    	background: antiquewhite;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+    &lt;span id=&quot;son&quot;&gt;我是单行的行内元素&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<h2 id="块级元素">块级元素</h2>
+<h3 id="1方案一">1.方案一</h3>
+<h3 id="定宽">定宽</h3>
+<h4 id="1利用margin0-auto">1.利用margin：0 auto</h4>
+<pre><code class="language-html">&lt;style&gt;
+    #father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+    }
+    #son {
+        width: 200px;
+        background: antiquewhite;
+        margin: 0 auto;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+    &lt;span id=&quot;son&quot;&gt;我是有宽度的块级元素&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="不定宽">不定宽</h3>
+<h4 id="1利用inline-block或者inline转化为行内元素text-align">1.利用inline-block或者inline转化为行内元素，text-align</h4>
+<p>这时默认子元素的宽度和父元素一样，这时候需要设置子元素为<code>block:inline-block||inline</code>将其转化为行内块级||行内元素，给父元素设置<code>text-align:center</code></p>
+<pre><code class="language-html">&lt;style&gt;    
+    #father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+        text-align: center;
+    }
+    #son {
+        background-color: green;
+        display: inline||inline-block;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+    &lt;div id=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="2方案二position">2.方案二position</h3>
+<p>首先设置父元素为相对定位，然后设置子元素为绝对定位，设置子元素为<code>left:50%</code>,即让块级元素的左边框水平居中</p>
+<ul>
+<li>定宽度：<code>margin-left:-width/2</code>；或者设置<code>transform:translateX(-50%);</code></li>
+<li>不定宽度：设置<code>transform:translateX(-50%)</code></li>
+</ul>
+<pre><code class="language-html">&lt;style&gt;
+    #father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+        position: relative;
+    }
+
+    #son {
+        width:100px;
+        background-color: green;
+        position: absolute;
+        left: 50%;
+        margin-left: -50px;||transform:translateX(-50%);
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+    &lt;div id=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-html">&lt;style&gt;
+    #father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+        position: relative;
+    }
+
+    .son {
+        background-color: green;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+    &lt;div id=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="3方案三flex">3.方案三flex</h3>
+<p>使用<code>display:flex;justify-content:center</code></p>
+<pre><code class="language-html"> &lt;style&gt;
+     #father {
+         width: 500px;
+         height: 300px;
+         background-color: skyblue;
+         display: flex;
+         justify-content: center;
+     }
+
+    .son {
+        background-color: green;
+        height: 100px;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+    &lt;div id=&quot;son&quot;&gt;我是块元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h1 id="垂直居中">垂直居中</h1>
+<h2 id="行内元素-2">行内元素</h2>
+<p>设置行内元素的高等于盒子的高度</p>
+<pre><code class="language-html">&lt;style&gt;
+	#father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+        line-height: 300px;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+	wahahahahhahaha
+&lt;/div&gt;
+</code></pre>
+<h2 id="块级元素-2">块级元素</h2>
+<h3 id="1方案一使用定位">1.方案一（使用定位）</h3>
+<p>首先设置父元素为相对定位，然后设置子元素为绝对定位，设置子元素为<code>top:50%</code>,即让块级元素的上边框垂直居中</p>
+<ul>
+<li>定宽度：<code>margin-top:-height/2</code>；或者设置<code>transform:translateY(-50%);</code></li>
+<li>不定宽度：设置<code>transform:translateY(-50%)</code></li>
+</ul>
+<pre><code class="language-html">&lt;style&gt;
+    #father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+        position: relative;
+    }
+    .son {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: green;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+	&lt;div class=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;	
+&lt;/div&gt;
+</code></pre>
+<h3 id="2方案二flex">2.方案二（flex）</h3>
+<p>利用<code>display:flex;align-items:center</code>进行垂直居中</p>
+<pre><code class="language-html">&lt;style&gt;
+     #father {
+         width: 500px;
+         height: 300px;
+         background-color: skyblue;
+         display: flex;
+         align-items: center;
+    }
+    .son {
+        background-color: green;
+    }
+&lt;style/&gt;
+&lt;div id=&quot;father&quot;&gt;
+    &lt;div class=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h1 id="水平垂直居中">水平垂直居中</h1>
+<h2 id="已知高度和宽度">已知高度和宽度</h2>
+<h3 id="1使用定位属性">1.使用定位属性</h3>
+<h3 id="方案一">方案一</h3>
+<p>设置父元素为相对定位，设置子元素为绝对定位，<code>top:0;right:0;bottom:0;left:0;margin:auto;</code></p>
+<pre><code class="language-html">&lt;style&gt;
+    #father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+        position: relative;
+    }
+    .son {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+    &lt;div class=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="方案二">方案二</h3>
+<p>设置父元素为相对定位，子元素为绝对定位，<code>left:50%;top:50%;margin-left:-width/2;margin-top:-height/2</code></p>
+<pre><code class="language-html">&lt;style&gt;
+     #father {
+         width: 500px;
+         height: 300px;
+         background-color: skyblue;
+         position: relative;
+     }
+     .son {
+         width: 100px;
+         height: 100px;
+         background-color: green;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         margin-left: -50px;
+         margin-top: -50px;
+     }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+	&lt;div class=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="2使用flex">2.使用flex</h3>
+<p>和下方未知高度和宽度的使用方法一样</p>
+<h2 id="未知高度和宽度">未知高度和宽度</h2>
+<h3 id="方案一使用定位属性">方案一.使用定位属性</h3>
+<p>设置父元素为相对定位，子元素为绝对定位，<code>left:50%;top:50%;transform: translateX(-50%) translateY(-50%);</code></p>
+<pre><code class="language-html">&lt;style&gt;
+     #father {
+         width: 500px;
+         height: 300px;
+         background-color: skyblue;
+         position: relative;
+     }
+     .son {
+         width: 100px;
+         height: 100px;
+         background-color: green;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform:translateX(-50%) translateY(-50%);
+     }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+	&lt;div class=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="方案二使用flex">方案二.使用flex</h3>
+<pre><code class="language-html">&lt;style&gt;
+    #father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .son {
+   		background-color: green;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+	&lt;div class=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  QQ:1501150926
+     邮箱:1501150926@qq.com
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li><a href="#%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD">水平居中</a>
+<ul>
+<li><a href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0">行内元素</a>
+<ul>
+<li><a href="#1%E5%88%A9%E7%94%A8text-align%E5%B1%9E%E6%80%A7">1.利用text-align属性</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0">块级元素</a>
+<ul>
+<li><a href="#1%E6%96%B9%E6%A1%88%E4%B8%80">1.方案一</a></li>
+<li><a href="#%E5%AE%9A%E5%AE%BD">定宽</a>
+<ul>
+<li><a href="#1%E5%88%A9%E7%94%A8margin0-auto">1.利用margin：0 auto</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%8D%E5%AE%9A%E5%AE%BD">不定宽</a>
+<ul>
+<li><a href="#1%E5%88%A9%E7%94%A8inline-block%E6%88%96%E8%80%85inline%E8%BD%AC%E5%8C%96%E4%B8%BA%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0text-align">1.利用inline-block或者inline转化为行内元素，text-align</a></li>
+</ul>
+</li>
+<li><a href="#2%E6%96%B9%E6%A1%88%E4%BA%8Cposition">2.方案二position</a></li>
+<li><a href="#3%E6%96%B9%E6%A1%88%E4%B8%89flex">3.方案三flex</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD">垂直居中</a>
+<ul>
+<li><a href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0-2">行内元素</a></li>
+<li><a href="#%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0-2">块级元素</a>
+<ul>
+<li><a href="#1%E6%96%B9%E6%A1%88%E4%B8%80%E4%BD%BF%E7%94%A8%E5%AE%9A%E4%BD%8D">1.方案一（使用定位）</a></li>
+<li><a href="#2%E6%96%B9%E6%A1%88%E4%BA%8Cflex">2.方案二（flex）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD">水平垂直居中</a>
+<ul>
+<li><a href="#%E5%B7%B2%E7%9F%A5%E9%AB%98%E5%BA%A6%E5%92%8C%E5%AE%BD%E5%BA%A6">已知高度和宽度</a>
+<ul>
+<li><a href="#1%E4%BD%BF%E7%94%A8%E5%AE%9A%E4%BD%8D%E5%B1%9E%E6%80%A7">1.使用定位属性</a></li>
+<li><a href="#%E6%96%B9%E6%A1%88%E4%B8%80">方案一</a></li>
+<li><a href="#%E6%96%B9%E6%A1%88%E4%BA%8C">方案二</a></li>
+<li><a href="#2%E4%BD%BF%E7%94%A8flex">2.使用flex</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9C%AA%E7%9F%A5%E9%AB%98%E5%BA%A6%E5%92%8C%E5%AE%BD%E5%BA%A6">未知高度和宽度</a>
+<ul>
+<li><a href="#%E6%96%B9%E6%A1%88%E4%B8%80%E4%BD%BF%E7%94%A8%E5%AE%9A%E4%BD%8D%E5%B1%9E%E6%80%A7">方案一.使用定位属性</a></li>
+<li><a href="#%E6%96%B9%E6%A1%88%E4%BA%8C%E4%BD%BF%E7%94%A8flex">方案二.使用flex</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://wangxiansen15.github.io/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://wangxiansen15.github.io/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+  
+</body>
+
+</html>

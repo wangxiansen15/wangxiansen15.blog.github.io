@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangxiansen15.github.io</id>
     <title>王先森想要更充实一点</title>
-    <updated>2020-12-02T12:11:09.014Z</updated>
+    <updated>2021-03-01T01:00:54.235Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangxiansen15.github.io"/>
     <link rel="self" href="https://wangxiansen15.github.io/atom.xml"/>
@@ -10,7 +10,292 @@
 热忱抛弃，颓废必至灵魂。</subtitle>
     <logo>https://wangxiansen15.github.io/images/avatar.png</logo>
     <icon>https://wangxiansen15.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 王先森想要更充实一点</rights>
+    <rights>All rights reserved 2021, 王先森想要更充实一点</rights>
+    <entry>
+        <title type="html"><![CDATA[水平居中和垂直居中]]></title>
+        <id>https://wangxiansen15.github.io/post/shui-ping-ju-zhong-he-chui-zhi-ju-zhong/</id>
+        <link href="https://wangxiansen15.github.io/post/shui-ping-ju-zhong-he-chui-zhi-ju-zhong/">
+        </link>
+        <updated>2021-03-01T00:59:57.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="水平居中">水平居中</h1>
+<h2 id="行内元素">行内元素</h2>
+<h3 id="1利用text-align属性">1.利用text-align属性</h3>
+<p><strong>如果父元素不是块级元素，先使用display将父元素变为块级元素。</strong></p>
+<pre><code class="language-html">&lt;style&gt;
+    #father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+        text-align: center;
+    }
+    #son {
+    	background: antiquewhite;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+    &lt;span id=&quot;son&quot;&gt;我是单行的行内元素&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<h2 id="块级元素">块级元素</h2>
+<h3 id="1方案一">1.方案一</h3>
+<h3 id="定宽">定宽</h3>
+<h4 id="1利用margin0-auto">1.利用margin：0 auto</h4>
+<pre><code class="language-html">&lt;style&gt;
+    #father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+    }
+    #son {
+        width: 200px;
+        background: antiquewhite;
+        margin: 0 auto;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+    &lt;span id=&quot;son&quot;&gt;我是有宽度的块级元素&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="不定宽">不定宽</h3>
+<h4 id="1利用inline-block或者inline转化为行内元素text-align">1.利用inline-block或者inline转化为行内元素，text-align</h4>
+<p>这时默认子元素的宽度和父元素一样，这时候需要设置子元素为<code>block:inline-block||inline</code>将其转化为行内块级||行内元素，给父元素设置<code>text-align:center</code></p>
+<pre><code class="language-html">&lt;style&gt;    
+    #father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+        text-align: center;
+    }
+    #son {
+        background-color: green;
+        display: inline||inline-block;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+    &lt;div id=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="2方案二position">2.方案二position</h3>
+<p>首先设置父元素为相对定位，然后设置子元素为绝对定位，设置子元素为<code>left:50%</code>,即让块级元素的左边框水平居中</p>
+<ul>
+<li>定宽度：<code>margin-left:-width/2</code>；或者设置<code>transform:translateX(-50%);</code></li>
+<li>不定宽度：设置<code>transform:translateX(-50%)</code></li>
+</ul>
+<pre><code class="language-html">&lt;style&gt;
+    #father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+        position: relative;
+    }
+
+    #son {
+        width:100px;
+        background-color: green;
+        position: absolute;
+        left: 50%;
+        margin-left: -50px;||transform:translateX(-50%);
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+    &lt;div id=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-html">&lt;style&gt;
+    #father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+        position: relative;
+    }
+
+    .son {
+        background-color: green;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+    &lt;div id=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="3方案三flex">3.方案三flex</h3>
+<p>使用<code>display:flex;justify-content:center</code></p>
+<pre><code class="language-html"> &lt;style&gt;
+     #father {
+         width: 500px;
+         height: 300px;
+         background-color: skyblue;
+         display: flex;
+         justify-content: center;
+     }
+
+    .son {
+        background-color: green;
+        height: 100px;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+    &lt;div id=&quot;son&quot;&gt;我是块元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h1 id="垂直居中">垂直居中</h1>
+<h2 id="行内元素-2">行内元素</h2>
+<p>设置行内元素的高等于盒子的高度</p>
+<pre><code class="language-html">&lt;style&gt;
+	#father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+        line-height: 300px;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+	wahahahahhahaha
+&lt;/div&gt;
+</code></pre>
+<h2 id="块级元素-2">块级元素</h2>
+<h3 id="1方案一使用定位">1.方案一（使用定位）</h3>
+<p>首先设置父元素为相对定位，然后设置子元素为绝对定位，设置子元素为<code>top:50%</code>,即让块级元素的上边框垂直居中</p>
+<ul>
+<li>定宽度：<code>margin-top:-height/2</code>；或者设置<code>transform:translateY(-50%);</code></li>
+<li>不定宽度：设置<code>transform:translateY(-50%)</code></li>
+</ul>
+<pre><code class="language-html">&lt;style&gt;
+    #father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+        position: relative;
+    }
+    .son {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: green;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+	&lt;div class=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;	
+&lt;/div&gt;
+</code></pre>
+<h3 id="2方案二flex">2.方案二（flex）</h3>
+<p>利用<code>display:flex;align-items:center</code>进行垂直居中</p>
+<pre><code class="language-html">&lt;style&gt;
+     #father {
+         width: 500px;
+         height: 300px;
+         background-color: skyblue;
+         display: flex;
+         align-items: center;
+    }
+    .son {
+        background-color: green;
+    }
+&lt;style/&gt;
+&lt;div id=&quot;father&quot;&gt;
+    &lt;div class=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h1 id="水平垂直居中">水平垂直居中</h1>
+<h2 id="已知高度和宽度">已知高度和宽度</h2>
+<h3 id="1使用定位属性">1.使用定位属性</h3>
+<h3 id="方案一">方案一</h3>
+<p>设置父元素为相对定位，设置子元素为绝对定位，<code>top:0;right:0;bottom:0;left:0;margin:auto;</code></p>
+<pre><code class="language-html">&lt;style&gt;
+    #father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+        position: relative;
+    }
+    .son {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+    &lt;div class=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="方案二">方案二</h3>
+<p>设置父元素为相对定位，子元素为绝对定位，<code>left:50%;top:50%;margin-left:-width/2;margin-top:-height/2</code></p>
+<pre><code class="language-html">&lt;style&gt;
+     #father {
+         width: 500px;
+         height: 300px;
+         background-color: skyblue;
+         position: relative;
+     }
+     .son {
+         width: 100px;
+         height: 100px;
+         background-color: green;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         margin-left: -50px;
+         margin-top: -50px;
+     }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+	&lt;div class=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="2使用flex">2.使用flex</h3>
+<p>和下方未知高度和宽度的使用方法一样</p>
+<h2 id="未知高度和宽度">未知高度和宽度</h2>
+<h3 id="方案一使用定位属性">方案一.使用定位属性</h3>
+<p>设置父元素为相对定位，子元素为绝对定位，<code>left:50%;top:50%;transform: translateX(-50%) translateY(-50%);</code></p>
+<pre><code class="language-html">&lt;style&gt;
+     #father {
+         width: 500px;
+         height: 300px;
+         background-color: skyblue;
+         position: relative;
+     }
+     .son {
+         width: 100px;
+         height: 100px;
+         background-color: green;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform:translateX(-50%) translateY(-50%);
+     }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+	&lt;div class=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="方案二使用flex">方案二.使用flex</h3>
+<pre><code class="language-html">&lt;style&gt;
+    #father {
+        width: 500px;
+        height: 300px;
+        background-color: skyblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .son {
+   		background-color: green;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;father&quot;&gt;
+	&lt;div class=&quot;son&quot;&gt;我是块级元素&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Set]]></title>
         <id>https://wangxiansen15.github.io/post/set/</id>
@@ -529,67 +814,6 @@ Person.prototype = {
 <p>发送请求行，就是告诉服务器浏览器需要什么资源，最常用的请求方法是GET。</p>
 <p>另一个常用的请求方法是POST，它用于发送一些数据给服务器，比如登录一个网站，就需要通过POST方法把用户数据发给服务器。如果使用POST方法，那么浏览器还要准备数据给服务器，这里准备的数据是通过请求体来发送。</p>
 <p>在浏览器发送请求行命令之后，还要以请求头形式发送其他一些信息，把浏览器的一些基础信息告诉服务器。比如包含了浏览器所使用的操作系统、浏览器内核等信息，以及当前请求的域名信息、浏览器端的Cookie信息，等等。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Boolean() Number() 的转换规则]]></title>
-        <id>https://wangxiansen15.github.io/post/boolean-number-de-zhuan-huan-gui-ze/</id>
-        <link href="https://wangxiansen15.github.io/post/boolean-number-de-zhuan-huan-gui-ze/">
-        </link>
-        <updated>2020-05-28T12:20:26.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="boolean">Boolean()</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">数据类型</th>
-<th style="text-align:center">转化为true的值</th>
-<th style="text-align:center">转化为false的值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Boolean</td>
-<td style="text-align:center">true</td>
-<td style="text-align:center">false</td>
-</tr>
-<tr>
-<td style="text-align:center">Number</td>
-<td style="text-align:center">任何非零的数字，包括Infinity 与-Infinity</td>
-<td style="text-align:center">0,-0,NaN</td>
-</tr>
-<tr>
-<td style="text-align:center">undefined</td>
-<td style="text-align:center">无</td>
-<td style="text-align:center">undefined</td>
-</tr>
-<tr>
-<td style="text-align:center">Object</td>
-<td style="text-align:center">任何对象</td>
-<td style="text-align:center">null</td>
-</tr>
-<tr>
-<td style="text-align:center">String</td>
-<td style="text-align:center">任何非空字符串</td>
-<td style="text-align:center">&quot;&quot;(空字符串)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="number">Number()</h2>
-<ul>
-<li>如果是<code>null</code>,转化为<code>0</code></li>
-<li>如果是<code>undefined</code> ,转化为NaN</li>
-<li>如果是bool值,<code>true</code>转化为<code>1</code>,<code>false</code>转化为<code>0</code></li>
-<li>如果是字符串
-<ul>
-<li>如果字符串中只包含数字(包括前面带正号和负号的情况)，将其转化为十进制数值（前导0会被忽略）</li>
-<li>如果字符串中包含有效的浮点格式，会将其转化为对应的浮点数（前导0会被忽略）</li>
-<li>如果字符串中包含有效的十六进制格式，会将其转化为同样大小的十进制整数值</li>
-<li>如果是空字符串会转化为0</li>
-<li>如果上述字符串中包含出上述格式外的所有字符，都会被转化为NaN</li>
-</ul>
-</li>
-<li>如果是对象，首先会调用对象的<code>valueOf()</code>方法，然后对返回的值进行上述规则的转换，如果得到的值为NaN，则会调用对象的toString()方法，然后按照前面的规则转换得到的字符串</li>
-</ul>
 ]]></content>
     </entry>
 </feed>
