@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangxiansen15.github.io</id>
     <title>王先森想要更充实一点</title>
-    <updated>2021-03-01T01:50:42.822Z</updated>
+    <updated>2021-03-01T02:42:04.386Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangxiansen15.github.io"/>
     <link rel="self" href="https://wangxiansen15.github.io/atom.xml"/>
@@ -11,6 +11,40 @@
     <logo>https://wangxiansen15.github.io/images/avatar.png</logo>
     <icon>https://wangxiansen15.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 王先森想要更充实一点</rights>
+    <entry>
+        <title type="html"><![CDATA[Position]]></title>
+        <id>https://wangxiansen15.github.io/post/position/</id>
+        <link href="https://wangxiansen15.github.io/post/position/">
+        </link>
+        <updated>2021-03-01T02:41:46.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="普通文档流">普通文档流</h2>
+<p>普通文档流即按照HTML定义顺序完成排布，块级元素从上到下，行内元素从左到右依次排序。</p>
+<h2 id="定位position">定位position</h2>
+<ul>
+<li>static</li>
+<li>relative</li>
+<li>absolute</li>
+<li>fixed</li>
+<li>sticky</li>
+</ul>
+<h3 id="static">static</h3>
+<p>static是position的默认值，表示元素使用普通的文档流进行排列</p>
+<h3 id="relative">relative</h3>
+<p>relative表示相对定位，相对于该元素在普通文档流中的位置(即position：static)进行偏移，即基点是元素的默认位置。</p>
+<p>relative并未脱离文档流，即其他普通元素在排布的时候会当它是普通元素，且会认为它还在原来的位置，即会预留出一块地址。</p>
+<h3 id="absolute">absolute</h3>
+<p>absolute表示绝对定位，相对于最近的非static的祖先元素进行定位，即其基点是最近的非static的祖先元素。</p>
+<p>absolute完全脱离文档流（定义absolute属性的元素会在文档流中完全删除），即其他元素在排布的时候会忽略absolute元素。</p>
+<h3 id="fixed">fixed</h3>
+<p>fixed表示固定定位，相对于viewport视窗进行定位，且该元素也会脱离普通文档流。</p>
+<p>fixed属性设置的元素不会随着页面滚动条的滚动而变化，像是被固定在窗口。</p>
+<h3 id="sticky">sticky</h3>
+<p>sticky表示粘性定位，该元素的基点会发生改变，粘性定位可以被认为是相对定位和固定定位的混合。元素在跨越特点阈值前为相对定位，之后为固定定位，直到 viewport 视口回滚到阈值以下。sticty生效的规则是必须配置位置，不然等同reactive。</p>
+<p>在祖先的滚动元素未滚动到阈值之前，sticky属性元素根据正常文档流进行定位，并且left、right、top、bottom四个属性实际是未生效的，此时基点就是当前元素在文档流中的位置，与relative基点一样。<br>
+当滚动的祖先元素滚动到sticky元素设置的阈值之后，sticky变成类似固定定位，且基点变成了滚动祖先元素的位置，就出现了该元素会固定在祖先元素上的现象。并且无论基点是什么都不会影响其它元素的位置，即sticky元素并未脱离文档流。</p>
+<p>一个sticky元素会“固定”在离它最近的一个拥有“滚动机制”的祖先上。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[水平居中和垂直居中]]></title>
         <id>https://wangxiansen15.github.io/post/shui-ping-ju-zhong-he-chui-zhi-ju-zhong/</id>
@@ -777,44 +811,6 @@ Person.prototype = {
 <li>省略了为构造函数传递初始化参数这一环节，结果所有实例在默认情况下都将取得相同的属性值。</li>
 <li>原型中所有属性是被很多实例共享的，这种共享对于函数非常合适。对于那些包含基本值的属性也可以，因为对象实例上的同名属性会隐藏原型中的对应属性。</li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[浏览器端发起HTTP请求流程]]></title>
-        <id>https://wangxiansen15.github.io/post/liu-lan-qi-duan-fa-qi-http-qing-qiu-liu-cheng/</id>
-        <link href="https://wangxiansen15.github.io/post/liu-lan-qi-duan-fa-qi-http-qing-qiu-liu-cheng/">
-        </link>
-        <updated>2020-09-05T07:18:29.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="1构建请求">1.构建请求</h3>
-<p>浏览器构建请求行消息，构建完成，浏览器准备发起网络请求</p>
-<pre><code class="language-http">GET /index.html HTTP1.1
-</code></pre>
-<h3 id="2查找缓存">2.查找缓存</h3>
-<p>真正发起网络请求之前，浏览器会先在浏览器缓存中查询是否又要请求的文件。其中，<strong>浏览器缓存是一种在本地保存资源副本，以供下次请求时直接使用的技术</strong>。</p>
-<p>如果发现请求的资源已经在浏览器缓存中存有副本，它会拦截请求，返回该资源的副本，并且直接结束请求，而不会再去源服务器重新下载。</p>
-<h4 id="查找缓存的好处">查找缓存的好处</h4>
-<ul>
-<li>缓解服务器端压力，提升性能（获取资源的耗时更短了）；</li>
-<li>对于网站来说，缓存是实现快速资源加载的重要组成部分。</li>
-</ul>
-<p>如果缓存查找失败，就会进入网络请求过程了。</p>
-<h3 id="3准备ip地址和端口">3.准备IP地址和端口</h3>
-<p>HTTP封装的文本信息是使用<strong>TCP/IP</strong>发送到网络上的，所以在HTTP工作开始之前，浏览器需要通过TCP与服务器建立连接。也就是说<strong>HTTP的内容是通过TCP的传输数据阶段来实现的</strong>。</p>
-<p>结合上面的说法，我们知道了，要想进行HTTP网络请求，首先是与服务器建立TCP连接。那么建立TCP连接的第一步就是需要准备<strong>IP地址和端口号</strong>。所以现在我们要利用URL地址来获取IP和端口信息了。</p>
-<p>首先我们知道数据包是通过IP地址传输给接收方的。但由于IP地址是数字标识，这就导致难以记忆。所以基于这个需求出现了一个服务。负责把域名和IP地址做一一映射关系。这套域名映射为IP的系统就叫做“<strong>域名系统</strong>”，简称DNS。</p>
-<p>结合以上说法，我们应该知道<strong>第一步浏览器会请求DNS返回域名对应的IP</strong>。当然浏览器还提供了DNS数据缓存服务，如果域名已经解析过了，那么浏览器会缓存解析的结果，下次查询时便可以直接使用，这样也会减少一次网络请求。</p>
-<p>拿到IP之后，接下来就需要获取端口号了。通常情况下，如果URL没有特别指明端口号，那么HTTP协议默认是80端口。</p>
-<h3 id="4等待tcp队列">4.等待TCP队列</h3>
-<p>Chrome有一个机制，同一个域名同时最多只能建立6个TCP连接，如果在同一个域名下同时有10个请求发生，那么其中四个请求会进入排队等待状态，直至进行中的请求完成。当然如果当前请求数量少于6，会直接进入下一步，建立TCP连接</p>
-<h3 id="5建立tcp连接">5.建立TCP连接</h3>
-<h3 id="6发送http请求">6.发送HTTP请求</h3>
-<p>在建立了TCP连接之后，浏览器就可以和服务器进行通信了。而HTTP中的数据也是在这个通信过程中传输的。</p>
-<p>首先浏览器会向服务器发送请求行，它包括了<strong>请求方法、请求URL和HTTP版本协议</strong></p>
-<pre><code class="language-http">GET /index.html HTTP/1.1
-</code></pre>
-<p>发送请求行，就是告诉服务器浏览器需要什么资源，最常用的请求方法是GET。</p>
-<p>另一个常用的请求方法是POST，它用于发送一些数据给服务器，比如登录一个网站，就需要通过POST方法把用户数据发给服务器。如果使用POST方法，那么浏览器还要准备数据给服务器，这里准备的数据是通过请求体来发送。</p>
-<p>在浏览器发送请求行命令之后，还要以请求头形式发送其他一些信息，把浏览器的一些基础信息告诉服务器。比如包含了浏览器所使用的操作系统、浏览器内核等信息，以及当前请求的域名信息、浏览器端的Cookie信息，等等。</p>
 ]]></content>
     </entry>
 </feed>
