@@ -18,6 +18,7 @@
 </head>
 <body>
   <div class="antialiased flex flex-col min-h-screen" id="app">
+
     <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
   <div class="flex justify-end px-4">
     <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
@@ -48,49 +49,47 @@
     </a>
   </nav>
 </div>
+
     <div class="max-w-4xl w-full mx-auto pt-32">
-      <div class="py-8 shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        计算机网络
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
         
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://wangxiansen15.github.io/tag/TTnHVeXi_/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              计算机网络（1）
-            </a>
-          </div>
-        
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://wangxiansen15.github.io/tag/ilMyGFS3f/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              JavaScript（8）
-            </a>
-          </div>
-        
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://wangxiansen15.github.io/tag/-vS28d4RN/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              react（1）
-            </a>
-          </div>
-        
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://wangxiansen15.github.io/tag/BqISoT94w/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              css（2）
-            </a>
-          </div>
-        
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://wangxiansen15.github.io/tag/psk-Rpdui/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              浏览器工作原理与实践（3）
-            </a>
-          </div>
-        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wangxiansen15.github.io/post/http-zhuang-tai-ma/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          HTTP 状态码
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-03-03</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        五类状态码
+
+1**：提示信息，表示目前是协议处理的中间状态，还需要后续的操作
+2**：成功，报文已经收到并被正确处理
+3**：重定向，资源位置发生变动，需要客户端重新发送请求
+4**：客户端错误，请求报文有误，服务器无法处理
+5**：服务...
       </div>
+      <a href="https://wangxiansen15.github.io/post/http-zhuang-tai-ma/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+  </div>
+  
+      </div>
+
+      
       <footer class="py-12 text-center px-4 md:px-0" v-pre>
   QQ:1501150926
      邮箱:1501150926@qq.com
 </footer>
+
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
